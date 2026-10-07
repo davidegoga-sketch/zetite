@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zetite</title>
+    <link rel="icon" type="image/png" href="zetite-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(2rem, 6vh, 4.5rem);
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .logo-link {
+            display: block;
+            line-height: 0;
+            border-radius: 2px;
+        }
+
+        .logo-link:focus-visible {
+            outline: 2px solid #dcdcd6;
+            outline-offset: 6px;
+        }
+
+        .logo {
+            width: min(40vw, 60vh, 668px);
+            min-width: 220px;
+            height: auto;
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.55))
+                    drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+
+        .logo-link:hover .logo,
+        .logo-link:focus-visible .logo {
+            transform: scale(1.02);
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7))
+                    drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+        }
+
+        .logo-link:active .logo {
+            transform: scale(0.99);
+            transition-duration: 0.1s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo { transition: none; }
+            .logo-link:hover .logo,
+            .logo-link:focus-visible .logo,
+            .logo-link:active .logo { transform: none; }
+        }
+
+        .coming-soon {
+            font-family: 'Geist', sans-serif;
+            font-weight: 800;
+            font-size: clamp(1.75rem, 2.9vw, 3.4rem);
+            letter-spacing: 0.01em;
+            color: #dcdcd6;
+            background: #111214;
+            padding: 0.15em 0.5em;
+        }
+    </style>
 </head>
 <body>
-    <h1>Zetite</h1>
-    <p>The website works.</p>
+    <a class="logo-link" href="https://www.roblox.com/communities/759688311/Zetite-Studios" aria-label="Zetite Studios on Roblox">
+        <img class="logo" src="zetite-icon.png" alt="Zetite logo">
+    </a>
+    <h1 class="coming-soon">COMING SOON</h1>
 </body>
 </html>
